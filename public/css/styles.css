@@ -1,0 +1,75 @@
+/* Base styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+}
+
+/* Form animations */
+.payment-form {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.payment-form.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    position: absolute;
+}
+
+/* Input focus styles */
+input:focus {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    border-color: #4f46e5;
+}
+
+/* Button loading state */
+button[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Success animation */
+@keyframes checkmark {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.fa-check {
+    animation: checkmark 0.3s ease;
+}
+
+/* Crypto option hover */
+.crypto-option:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Card icons styling */
+.fab {
+    font-size: 1.2em;
+}
+
+/* Amount input styling */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Crypto details panel */
+#crypto-details {
+    transition: all 0.3s ease;
+}
